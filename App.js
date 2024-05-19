@@ -1,12 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Index from './Index';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+Stack = createNativeStackNavigator();
+const noHeader = { headerShown: false };
+
+import Login from './Screens/Login';
+import Register from './Screens/Register';
+import BuildProfile from './Screens/BuildProfile';
+import Home from './Screens/Home';
+import LocalAuthenticationScreen from './Screens/LocalAuthenticationScreen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Index />
   );
 }
 

@@ -45,7 +45,7 @@ export default function Login({navigation}) {
 
   const handleLogIn = async () => {
     //Try login 
-    axios.post('http://192.168.100.140:3000/api/login',{email, password})
+    axios.post('http://192.168.100.99:3000/api/login',{email, password})
     .then(response=>{
       //set to async storage
       AsyncStorage.setItem('UserDetails',JSON.stringify(response));

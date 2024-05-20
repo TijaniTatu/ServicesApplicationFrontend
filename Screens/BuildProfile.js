@@ -20,7 +20,7 @@ export default function BuildProfile({navigation}) {
         setUID(UserObject.data.userCredential.user.uid);
         setEmail(UserObject.data.userCredential.user.email);
 
-        axios.post('http://192.168.100.140:3000/api/buildprofile', { uid, username , phone_number,email})
+        axios.post('http://192.168.100.99:3000/api/buildprofile', { uid, username , phone_number,email})
         .then(response => {
           //go to build profile
           //store details in async storage

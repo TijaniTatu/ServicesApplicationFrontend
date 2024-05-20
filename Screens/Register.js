@@ -23,7 +23,7 @@ export default function Register({ navigation }) {
 
     } else {
 
-      axios.post('http://192.168.100.140:3000/api/register', { email, password })
+      axios.post('http://192.168.100.99:3000/api/register', { email, password })
         .then(response => {
           //tell user to approve account via email
           //try to logIn
@@ -43,16 +43,19 @@ export default function Register({ navigation }) {
 
   const hangeleRegisterNext = async () => {
     //try to logIn
-    axios.post('http://192.168.100.140:3000/api/login', { email, password })
+    axios.post('http://192.168.100.99:3000/api/login', { email, password })
       .then(response => {
         //go to build profile
         //store details in async storage
         AsyncStorage.setItem('UserDetails',JSON.stringify(response));
         navigation.push('BuildProfileScreen')
+        console.log();
       }).catch(err => {
         //somehow alert the user there's an error
         console.error(err);
-      })
+        console.log(err.message);
+        console.log(Object.keys(err));
+            })
   }
 
   return (
